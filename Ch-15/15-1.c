@@ -27,24 +27,27 @@
 
 int main()
 {
-
     char a;
 
-    printf("Enter any character: ");
-    scanf("%c", &a);
+    // String
+    char str[20];
 
-    if (a >= 65 && a <= 90)
+    // Input
+    printf("Enter name: ");
+    // scanf("%s", &str);
+    scanf("%[^\n]", &str);
+
+    // Conversion   => lower    ->  UPPER
+    // for (int i = 0; str[i] != NULL; i++)
+    for (int i = 0; str[i] != '\0'; i++)
     {
-        // Lower case
-        a += 32;
-    }
-    else
-    {
-        // Upper case
-        a -= 32;
+        if (str[i] >= 97 && str[i] <= 122)
+        {
+            str[i] -= 32;
+        }
     }
 
-    printf("Character: %c", a);
+    printf("Name: %s", str);
 
     return 0;
 }
