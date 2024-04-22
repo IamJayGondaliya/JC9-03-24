@@ -118,3 +118,42 @@ int getArrayAverage(int a[], int n)
 
     return avg;
 }
+
+// Recursion
+void loop(int start, int end)
+{
+    printf("%d\n", start);
+    start++;
+    if (start <= end)
+    {
+        loop(start, end);
+    }
+}
+
+/*
+    5
+
+    5 + 4 + 3 + 2 + 1
+
+    5 + 4
+    4 + 3
+    3 + 2
+    2 + 1
+*/
+
+int getSum(int n) // 5, 4, 3, 2, 1
+{
+    if (n <= 1) // 5<=1, 4<=1, 3<=1, 2<=1, 1<=1
+    {
+        return 1;
+    }
+    else
+    {
+        return n + getSum(n - 1);
+        //      5 + getSum(4)               =>  5 + 10  =>  15
+        //         4 + getSum(3)            =>  4 + 6   =>  10
+        //             3 + getSum(2)        =>  3 + 3   =>  6
+        //                 2 + getSum(1)    =>  2 + 1   =>  3
+        //                     1
+    }
+}
