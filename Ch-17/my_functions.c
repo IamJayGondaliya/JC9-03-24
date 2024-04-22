@@ -119,6 +119,18 @@ int getArrayAverage(int a[], int n)
     return avg;
 }
 
+int arrayInsert(int a[], int n, int pos, int val)
+{
+
+    for (int i = n; i >= pos; i--)
+    {
+        a[i] = a[i - 1];
+    }
+    a[pos] = val;
+    n++;
+    return n;
+}
+
 // Recursion
 void loop(int start, int end)
 {
