@@ -169,3 +169,30 @@ int getSum(int n) // 5, 4, 3, 2, 1
         //                     1
     }
 }
+
+void swap(int *a, int *b) // 10 5
+{
+    *a = *a + *b;
+    // a = 15
+    *b = *a - *b;
+    // b = 10
+    *a = *a - *b;
+    // a = 5
+
+    printf("Inside the swap:\n");
+    printf("a: %d\nb: %d\n", *a, *b);
+}
+
+void intRev(int *p)
+{
+    int rev = 0, rem;
+
+    while (*p != 0)
+    {
+        rem = *p % 10;
+        rev = rev * 10 + rem;
+        *p /= 10;
+    }
+
+    *p = rev;
+}
