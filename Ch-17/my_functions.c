@@ -76,6 +76,13 @@ int getInt(char varName[])
     scanf("%d", &n);
     return n;
 }
+float getFloat(char varName[])
+{
+    float n;
+    printf("Enter %s: ", varName);
+    scanf("%f", &n);
+    return n;
+}
 
 int getArrayElement(char arrayName[], int index)
 {
